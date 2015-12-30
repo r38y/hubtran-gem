@@ -1,13 +1,13 @@
 require "hubtran/version"
-require "hubtran/configuration"
+require "hubtran/config"
 
 module Hubtran
   class << self
-    attr_writer :configuration
+    attr_writer :config
   end
 
   def self.config
-    @config ||= Configuration.new
+    @config ||= Config.new
   end
 
   def self.configure
@@ -15,6 +15,6 @@ module Hubtran
   end
 
   def self.reset
-    @config = Configuration.new
+    @config = Config.new
   end
 end

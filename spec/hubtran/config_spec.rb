@@ -1,7 +1,7 @@
 require "spec_helper"
 
 module Hubtran
-  describe Configuration do
+  describe Config do
     let(:config) { described_class.new }
 
     it "has an api_key" do
