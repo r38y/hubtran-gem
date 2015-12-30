@@ -9,5 +9,15 @@ module Hubtran
       config.api_key = "api-key"
       expect(config.api_key).to eq "api-key"
     end
+
+    it "has a default endpoint" do
+      expect(config.endpoint).to eq "https://stagingapi.hubtran.com"
+    end
+
+    it "allows setting the endpoint" do
+      config.endpoint = "https://hubtran.dev"
+
+      expect(config.endpoint).to eq "https://hubtran.dev"
+    end
   end
 end
