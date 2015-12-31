@@ -1,5 +1,6 @@
 require "hubtran/version"
 require "hubtran/config"
+require "hubtran/client"
 
 module Hubtran
   class << self
