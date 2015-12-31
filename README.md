@@ -22,6 +22,8 @@ Or install it yourself as:
 
 ## Usage
 
+Configure the gem:
+
 ```
 Hubtran.configure do |config|
   config.api_key = "your-api-key"
