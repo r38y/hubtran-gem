@@ -1,6 +1,7 @@
 require "active_model"
 require "active_support"
 require "faraday"
+require "json"
 require "hubtran/version"
 require "hubtran/config"
 require "hubtran/client"
