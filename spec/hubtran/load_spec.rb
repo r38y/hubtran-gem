@@ -2,14 +2,6 @@ require "spec_helper"
 
 module Hubtran
   describe Load do
-    before do
-      Hubtran.configure do |config|
-        config.token = "test"
-        config.endpoint = "https://api.hubtran.dev"
-        config.verify_ssl = false
-      end
-    end
-
     describe "#save" do
       it "does not save the load if invalid" do
         load = described_class.new({})

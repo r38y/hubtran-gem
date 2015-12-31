@@ -2,21 +2,8 @@ require "spec_helper"
 
 module Hubtran
   describe Client do
-    before do
-      Hubtran.configure do |config|
-        config.token = "test"
-        config.endpoint = "https://api.hubtran.dev"
-      end
-    end
-
     it "works" do
       VCR.use_cassette "client_valid_request" do
-        Hubtran.configure do |config|
-          config.token = "test"
-          config.endpoint = "https://api.hubtran.dev"
-          config.verify_ssl = false
-        end
-
         response = described_class.new.put("/tms/loads/load_id", {
           load: {load_id: "load_id"}
         })
@@ -30,8 +17,6 @@ module Hubtran
       VCR.use_cassette "client_wrong_token" do
         Hubtran.configure do |config|
           config.token = "wrong"
-          config.endpoint = "https://api.hubtran.dev"
-          config.verify_ssl = false
         end
 
         response = described_class.new.put("/tms/loads/load_id", {
