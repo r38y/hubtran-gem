@@ -26,7 +26,7 @@ Configure the gem:
 
 ```
 Hubtran.configure do |config|
-  config.api_key = "your-api-key"
+  config.token = "your-token"
   config.endpoint = "talk-to-randy"
 end
 ```

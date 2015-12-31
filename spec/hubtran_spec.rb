@@ -4,13 +4,13 @@ describe Hubtran do
   describe "#configure" do
     before do
       Hubtran.configure do |config|
-        config.api_key = "api-key"
+        config.token = "token"
         config.endpoint = "https://hubtran.dev"
       end
     end
 
-    it "sets api_key" do
-      expect(Hubtran.config.api_key).to eq "api-key"
+    it "sets token" do
+      expect(Hubtran.config.token).to eq "token"
     end
 
     it "sets endpoint" do

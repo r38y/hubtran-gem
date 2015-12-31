@@ -4,10 +4,10 @@ module Hubtran
   describe Config do
     let(:config) { described_class.new }
 
-    it "has an api_key" do
-      expect(config.api_key).to eq nil
-      config.api_key = "api-key"
-      expect(config.api_key).to eq "api-key"
+    it "has an token" do
+      expect(config.token).to eq nil
+      config.token = "token"
+      expect(config.token).to eq "token"
     end
 
     describe "#endpoint" do

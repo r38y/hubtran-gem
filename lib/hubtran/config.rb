@@ -1,6 +1,6 @@
 module Hubtran
   class Config
-    attr_accessor :api_key
+    attr_accessor :token
     attr_accessor :endpoint
     attr_accessor :verify_ssl
 
