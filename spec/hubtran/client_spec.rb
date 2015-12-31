@@ -4,7 +4,7 @@ module Hubtran
   describe Client do
     before do
       Hubtran.configure do |config|
-        config.api_key = "test"
+        config.token = "test"
         config.endpoint = "https://api.hubtran.dev"
       end
     end
@@ -12,7 +12,7 @@ module Hubtran
     it "works" do
       VCR.use_cassette "client_valid_request" do
         Hubtran.configure do |config|
-          config.api_key = "test"
+          config.token = "test"
           config.endpoint = "https://api.hubtran.dev"
           config.verify_ssl = false
         end
@@ -29,7 +29,7 @@ module Hubtran
     it "returns an error if the token is wrong" do
       VCR.use_cassette "client_wrong_token" do
         Hubtran.configure do |config|
-          config.api_key = "wrong"
+          config.token = "wrong"
           config.endpoint = "https://api.hubtran.dev"
           config.verify_ssl = false
         end

@@ -8,13 +8,13 @@ module Hubtran
 
     private
 
-    def_delegators "Hubtran.config", :endpoint, :api_key
+    def_delegators "Hubtran.config", :endpoint, :token
 
     def connection
       @connection ||= Faraday.new(
         url: endpoint,
         headers: {
-          'Authorization' => "Token token=#{api_key}",
+          'Authorization' => "Token token=#{token}",
           'Accept' => 'application/json',
         },
         ssl: {verify:  Hubtran.config.verify_ssl}

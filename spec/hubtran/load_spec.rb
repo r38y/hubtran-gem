@@ -4,7 +4,7 @@ module Hubtran
   describe Load do
     before do
       Hubtran.configure do |config|
-        config.api_key = "test"
+        config.token = "test"
         config.endpoint = "https://api.hubtran.dev"
         config.verify_ssl = false
       end
