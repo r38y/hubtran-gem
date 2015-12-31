@@ -5,6 +5,7 @@ require "hubtran/version"
 require "hubtran/config"
 require "hubtran/client"
 require "hubtran/load"
+require "hubtran/response"
 
 begin
   require "byebug"

@@ -11,8 +11,10 @@ module Hubtran
     def save
       return false unless valid?
       client.put("/tms/loads/#{load_id}", payload).tap do |response|
-        json = JSON.parse(response.body)
-        @attributes[:hubtran_id] = json["load"]["id"]
+        r = Response.new(response)
+        if r.successful?
+          @attributes[:hubtran_id] = r.to_hash["load"]["id"]
+        end
       end
       true
     end
