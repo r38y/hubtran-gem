@@ -1,11 +1,15 @@
 require "active_model"
 require "active_support"
 require "faraday"
-require "byebug"
 require "hubtran/version"
 require "hubtran/config"
 require "hubtran/client"
 require "hubtran/load"
+
+begin
+  require "byebug"
+rescue LoadError
+end
 
 module Hubtran
   class << self

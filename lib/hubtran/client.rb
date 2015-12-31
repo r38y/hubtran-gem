@@ -17,7 +17,7 @@ module Hubtran
           'Authorization' => "Token token=#{api_key}",
           'Accept' => 'application/json',
         },
-        ssl: { verify: false }
+        ssl: {verify:  Hubtran.config.verify_ssl}
       )
     end
   end
