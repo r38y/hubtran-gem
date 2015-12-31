@@ -1,3 +1,7 @@
+require "active_model"
+require "active_support"
+require "faraday"
+require "byebug"
 require "hubtran/version"
 require "hubtran/config"
 require "hubtran/client"
@@ -19,4 +23,7 @@ module Hubtran
   def self.reset
     @config = Config.new
   end
+
+  class Error < StandardError; end
+  class Invalid < Error; end
 end

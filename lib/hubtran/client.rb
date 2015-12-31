@@ -1,10 +1,9 @@
-require "faraday"
 module Hubtran
   class Client
     extend Forwardable
 
     def put(path, params)
-      connection.put endpoint + path, params
+      connection.put (endpoint + path), params
     end
 
     private
