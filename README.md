@@ -1,8 +1,8 @@
-# Hubtran
+# HubTran
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/hubtran`. To experiment with that code, run `bin/console` for an interactive prompt.
+Wrapper for the [HubTran](https://www.hubtran.com/) API. 
 
-TODO: Delete this and the text above, and describe your gem
+What is HubTran? HubTran ends back-office frustration for transportation companies. Please email support@hubtran.com if you would like an account to try it out. 
 
 ## Installation
 
@@ -22,7 +22,19 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```
+Hubtran.configure do |config|
+  config.api_key = "your-api-key"
+  config.endpoint = "talk-to-randy"
+end
+```
+
+Then add some loads with:
+
+```
+load = Hubtran::Load.new(load_id: "load1234")
+load.save
+```
 
 ## Development
 
@@ -32,7 +44,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/hubtran.
+Bug reports and pull requests are welcome on GitHub at https://github.com/r38y/hubtran.
 
 
 ## License
