@@ -1,8 +1,8 @@
 # HubTran
 
-Wrapper for the [HubTran](https://www.hubtran.com/) API. 
+Wrapper for the [HubTran](https://www.hubtran.com/) API.
 
-What is HubTran? HubTran ends back-office frustration for transportation companies. Please email support@hubtran.com if you would like an account to try it out. 
+What is HubTran? HubTran ends back-office frustration for transportation companies. Please email support@hubtran.com if you would like an account to try it out.
 
 ## Installation
 
@@ -34,7 +34,7 @@ end
 Then add some loads with:
 
 ```
-load = Hubtran::Load.new(load_id: "load1234")
+load = Hubtran::Load.new({load_id: "load1234", external_id: "externalid1234"})
 load.save
 ```
 
