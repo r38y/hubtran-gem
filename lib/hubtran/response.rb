@@ -9,11 +9,8 @@ module Hubtran
     end
 
     def errors
-      [].tap do |errors|
-        unless successful?
-          to_hash["errors"]
-        end
-      end
+      return [] if successful?
+      to_hash["errors"]
     end
 
     def to_hash
