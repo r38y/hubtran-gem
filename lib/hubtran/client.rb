@@ -6,6 +6,10 @@ module Hubtran
       connection.put (endpoint + path), params
     end
 
+    def post(path, params)
+      connection.post (endpoint + path), params
+    end
+
     private
 
     def_delegators "Hubtran.config", :endpoint, :token

@@ -5,7 +5,9 @@ require "json"
 require "hubtran/version"
 require "hubtran/config"
 require "hubtran/client"
+require "hubtran/common"
 require "hubtran/load"
+require "hubtran/shipment"
 require "hubtran/response"
 
 begin
