@@ -1,13 +1,10 @@
 module Hubtran
   class Load
-    include ActiveModel::Validations
+    include Common
 
     validates_presence_of :load_id, :external_id
 
-    def initialize(attributes)
-      @attributes = attributes
-    end
-
+    # TODO move to common
     def save
       return false unless valid?
       client.put("/tms/loads/#{load_id}", payload).tap do |response|
@@ -19,10 +16,6 @@ module Hubtran
       true
     end
 
-    def hubtran_id
-      @attributes[:hubtran_id]
-    end
-
     private
 
     def payload
@@ -31,14 +24,6 @@ module Hubtran
 
     def load_id
       @attributes[:load_id]
-    end
-
-    def external_id
-      @attributes[:external_id]
-    end
-
-    def client
-      @client ||= Client.new
     end
   end
 end
