@@ -10,8 +10,17 @@ module Hubtran
 
     def save
       return false unless valid?
-      client.put "/tms/loads/#{load_id}", payload
+      response = client.put "/tms/loads/#{load_id}", payload
+      update_from_response(response)
       true
+    end
+
+    def update_from_response(response)
+      @attributes[:hubtran_id] = JSON.parse(response.body)["load"]["id"]
+    end
+
+    def hubtran_id
+      @attributes[:hubtran_id]
     end
 
     private

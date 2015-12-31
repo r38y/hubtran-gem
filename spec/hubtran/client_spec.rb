@@ -12,5 +12,8 @@ module Hubtran
     it "does not asplode" do
       described_class.new
     end
+
+    xit "returns an error if the api key is wrong" do
+    end
   end
 end
